@@ -93,7 +93,7 @@ contract EasySwapOrderBook is
         string memory EIP712Name,
         string memory EIP712Version
     ) internal onlyInitializing {
-        // 初始化上下文模块，用于获取交易信息11
+        // 初始化上下文模块，用于获取交易信息
         __Context_init();
         // 初始化防重入模块，防止重入攻击
         __ReentrancyGuard_init();
@@ -133,8 +133,8 @@ contract EasySwapOrderBook is
         external
         payable
         override
-        whenNotPaused
-        nonReentrant
+        whenNotPaused //合约安全检查
+        nonReentrant //防止重入攻击
         returns (OrderKey[] memory newOrderKeys)
     {
         uint256 orderAmount = newOrders.length;
@@ -312,6 +312,9 @@ contract EasySwapOrderBook is
 
             // deposit asset to vault
             if (order.side == LibOrder.Side.List) {
+
+
+                
                 if (order.nft.amount != 1) {
                     // limit list order amount to 1
                     return LibOrder.ORDERKEY_SENTINEL;

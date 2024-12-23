@@ -105,7 +105,7 @@ contract EasySwapVault is IEasySwapVault, OwnableUpgradeable {
     ) external onlyEasySwapOrderBook {
         NFTBalance[newOrderKey] = NFTBalance[oldOrderKey];
         delete NFTBalance[oldOrderKey];
-    }
+    }   
 
     function transferERC721(
         address from,

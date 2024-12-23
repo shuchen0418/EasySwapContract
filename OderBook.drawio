@@ -1,0 +1,63 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram id="pQdhk7gyeJbiif6xd5pg" name="第 1 页">
+    <mxGraphModel dx="574" dy="613" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QOKEWYtXI56O_5_blypz-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-1" target="QOKEWYtXI56O_5_blypz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-1" value="makeOrders" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-2" target="QOKEWYtXI56O_5_blypz-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-2" value="获取订单数量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-4" target="QOKEWYtXI56O_5_blypz-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-4" value="根据订单数量新建orderKey数组" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-6" target="QOKEWYtXI56O_5_blypz-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-6" value="i&amp;lt;orderAmount&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="142.5" y="300" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-8" target="QOKEWYtXI56O_5_blypz-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-8" value="uint buyPrice" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="400" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-10" target="QOKEWYtXI56O_5_blypz-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-15" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QOKEWYtXI56O_5_blypz-14">
+          <mxGeometry x="-0.2311" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-10" value="判断订单i是否是买单" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="145" y="450" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-13" value="buyPrice=&lt;div&gt;订单i里的nft价格&lt;/div&gt;&lt;div&gt;*nft数量&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QOKEWYtXI56O_5_blypz-17" target="QOKEWYtXI56O_5_blypz-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-17" value="_makeOrderTry" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QOKEWYtXI56O_5_blypz-20" value="&lt;div style=&quot;background-color: rgb(24, 24, 24); line-height: 19px;&quot;&gt;&lt;pre style=&quot;&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;order.maker == _msgSender() &amp;amp;&amp;amp;&lt;br/&gt;Price.unwrap(order.price) != 0 &amp;amp;&amp;amp; &lt;br/&gt;order.salt != 0 &amp;amp;&amp;amp; &lt;br/&gt;(order.expiry &amp;gt; block.timestamp || order.expiry == 0) &amp;amp;&amp;amp; &lt;br/&gt;filledAmount[LibOrder.hash(order)] == 0 &lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/pre&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="150" y="140" width="700" height="430" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
