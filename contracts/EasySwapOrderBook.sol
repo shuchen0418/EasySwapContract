@@ -35,28 +35,28 @@ contract EasySwapOrderBook is
 
     event LogMake(
         OrderKey orderKey,
-        LibOrder.Side indexed side,
-        LibOrder.SaleKind indexed saleKind,
-        address indexed maker,
-        LibOrder.Asset nft,
-        Price price,
-        uint64 expiry,
-        uint64 salt
+        LibOrder.Side indexed side,//挂单还是买单
+        LibOrder.SaleKind indexed saleKind,//固定价格出售整个collection还是单个item
+        address indexed maker,//买卖家
+        LibOrder.Asset nft,//NFT信息
+        Price price,//单价
+        uint64 expiry,//过期时间
+        uint64 salt//随机数
     );
 
     event LogCancel(OrderKey indexed orderKey, address indexed maker);
 
     event LogMatch(
-        OrderKey indexed makeOrderKey,
-        OrderKey indexed takeOrderKey,
-        LibOrder.Order makeOrder,
-        LibOrder.Order takeOrder,
-        uint128 fillPrice
+        OrderKey indexed makeOrderKey,//成交的挂单
+        OrderKey indexed takeOrderKey,//成交的买单
+        LibOrder.Order makeOrder,//挂单
+        LibOrder.Order takeOrder,//买单
+        uint128 fillPrice//成交价
     );
 
     event LogWithdrawETH(address recipient, uint256 amount);
-    event BatchMatchInnerError(uint256 offset, bytes msg);
-    event LogSkipOrder(OrderKey orderKey, uint64 salt);
+    event BatchMatchInnerError(uint256 offset, bytes msg);//批量匹配内部错误
+    event LogSkipOrder(OrderKey orderKey, uint64 salt);//跳过订单
 
     modifier onlyDelegateCall() {
         _checkDelegateCall();
@@ -66,7 +66,7 @@ contract EasySwapOrderBook is
     /// @custom:oz-upgrades-unsafe-allow state-variable-immutable state-variable-assignment
     address private immutable self = address(this);
 
-    address private _vault;
+    address private _vault;//合约金库地址
 
     /**
      * @notice Initialize contracts.
@@ -78,7 +78,7 @@ contract EasySwapOrderBook is
         address newVault,
         string memory EIP712Name,
         string memory EIP712Version
-    ) public initializer {
+    ) public initializer {   //initializer确保只会调用一次
         __EasySwapOrderBook_init(
             newProtocolShare,
             newVault,
@@ -93,13 +93,20 @@ contract EasySwapOrderBook is
         string memory EIP712Name,
         string memory EIP712Version
     ) internal onlyInitializing {
+        // 初始化上下文模块，用于获取交易信息
         __Context_init();
+        // 初始化防重入模块，防止重入攻击
         __ReentrancyGuard_init();
+        // 初始化可暂停模块，允许在紧急情况下暂停合约
         __Pausable_init();
+        // 初始化所有权模块，设置合约所有者为当前调用者
         __Ownable_init(_msgSender());
 
+        // 初始化订单验证模块，设置EIP712的名称和版本
         __OrderValidator_init(EIP712Name, EIP712Version);
+        // 初始化协议管理模块，设置默认协议费用
         __ProtocolManager_init(newProtocolShare);
+        // 初始化合约的特定状态变量，设置金库地址
         __EasySwapOrderBook_init_unchained(newVault);
     }
 
