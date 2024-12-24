@@ -73,7 +73,7 @@ contract OrderStorage is ReentrancyGuardUpgradeable {
         LibOrder.OrderQueue storage orderQueue = orderQueues[
             order.nft.collection
         ][order.side][order.price];
-
+ 
         if (LibOrder.isSentinel(orderQueue.head)) {
             orderQueues[order.nft.collection][order.side][
                 order.price
@@ -82,8 +82,7 @@ contract OrderStorage is ReentrancyGuardUpgradeable {
                 LibOrder.ORDERKEY_SENTINEL
             );
             orderQueue = orderQueues[order.nft.collection][order.side][
-                order.price
-            ];
+                order.price];
         }
         if (LibOrder.isSentinel(orderQueue.tail)) {
             orderQueue.head = orderKey;

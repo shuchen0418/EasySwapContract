@@ -133,8 +133,8 @@ contract EasySwapOrderBook is
         external
         payable
         override
-        whenNotPaused //合约安全检查
-        nonReentrant //防止重入攻击
+        whenNotPaused
+        nonReentrant
         returns (OrderKey[] memory newOrderKeys)
     {
         uint256 orderAmount = newOrders.length;
@@ -312,9 +312,6 @@ contract EasySwapOrderBook is
 
             // deposit asset to vault
             if (order.side == LibOrder.Side.List) {
-
-
-                
                 if (order.nft.amount != 1) {
                     // limit list order amount to 1
                     return LibOrder.ORDERKEY_SENTINEL;
