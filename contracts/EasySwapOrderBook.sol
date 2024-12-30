@@ -215,7 +215,7 @@ contract EasySwapOrderBook is
         }
 
         if (msg.value > bidETHAmount) {
-            _msgSender().safeTransferETH(msg.value - bidETHAmount);
+            _msgSender().safeTransferETH(msg.value - bidETHAmount);//转钱给_msgSender()
         }
     }
 
