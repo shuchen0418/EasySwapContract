@@ -451,16 +451,16 @@ contract EasySwapOrderBook is
             }
         }
 
-        emit LogMake(
-            newOrderKey,
-            newOrder.side,
-            newOrder.saleKind,
-            newOrder.maker,
-            newOrder.nft,
-            newOrder.price,
-            newOrder.expiry,
-            newOrder.salt
-        );
+            emit LogMake(
+            newOrderKey, // 新订单的唯一标识符
+            newOrder.side, // 订单类型 (买入或卖出)
+            newOrder.saleKind, // 出售类型 (整套或单个)
+            newOrder.maker, // 订单创建者地址
+            newOrder.nft, // NFT 的详细信息
+            newOrder.price, // 新的价格
+            newOrder.expiry, // 订单过期时间戳
+            newOrder.salt // 随机数，用于防止重放攻击
+        ); // 发出事件，记录新订单的信息
     }
 
     function _matchOrder(
