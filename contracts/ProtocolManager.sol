@@ -11,6 +11,9 @@ abstract contract ProtocolManager is
     Initializable,
     OwnableUpgradeable
 {
+    /// @notice Protocol's share of the fees/revenue, represented as a percentage with 2 decimal places
+    /// @dev Value range: 0 to MAX_PROTOCOL_SHARE (defined in LibPayInfo)
+    /// For example: 1000 = 10.00%, 500 = 5.00%
     uint128 public protocolShare;
 
     event LogUpdatedProtocolShare(uint128 indexed newProtocolShare);

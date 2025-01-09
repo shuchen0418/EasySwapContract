@@ -505,6 +505,7 @@ contract EasySwapOrderBook is
             sellOrder.maker.safeTransferETH(fillPrice - protocolFee);
 
             if (isSellExist) {
+                // 如果卖单存在于订单存储中，从合约金库中提取NFT
                 IEasySwapVault(_vault).withdrawNFT(
                     sellOrderKey,
                     buyOrder.maker,
@@ -512,6 +513,8 @@ contract EasySwapOrderBook is
                     sellOrder.nft.tokenId
                 );
             } else {
+                // 如果卖单不存在于订单存储中(即时成交)
+                // 直接将NFT从卖家转移给买家
                 IEasySwapVault(_vault).transferERC721(
                     sellOrder.maker,
                     buyOrder.maker,
